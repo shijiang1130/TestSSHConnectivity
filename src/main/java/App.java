@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class App {
-	private static String DNS_SERVER = "ch2dns02p";
+	private static String DNS_SERVER = "8.8.8.8";
 	private static final boolean PERFORM_SSH_COMMANDS = true;
 	private static final ReportWriter reportWriter = new ReportWriter();
     private static ReportInfo reportInfo = new ReportInfo();
@@ -67,7 +67,7 @@ public class App {
 					System.out.println("Start time: " + hostStartTime.format(DateTimeFormatter.ofPattern("HH:mm:ss.SSS")));
 					
 					System.out.println("Resolving hostname...");
-					String hostFQDN = host + ".htichina.net";
+					String hostFQDN = host + ".lookdata.cn";
 					resolvedIp = HostResolver.resolveHostname(hostFQDN, DNS_SERVER);
 					if (resolvedIp == null) {
 						throw new IOException("Could not resolve IP address for " + hostFQDN);
